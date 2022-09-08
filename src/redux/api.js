@@ -1,6 +1,9 @@
 import axios from 'axios'
 
-const API = axios.create({ baseURL: 'http://localhost:8080' })
+
+const API = axios.create({ baseURL: process.env.ENV === "prod" ? process.env.URL_PROD : process.env.URL_DEV })
+console.log(process.env.ENV)
+console.log(process.env.URL_PROD)
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem('profile')) {
