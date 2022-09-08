@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const API = axios.create({ baseURL: process.env.ENV === "prod" ? process.env.URL_PROD : process.env.URL_DEV })
+const API = axios.create({ baseURL: process.env.REACT_APP_ENV === "prod" ? process.env.REACT_APP_URL_PROD : process.env.REACT_APP_URL_DEV })
 console.log(process.env.ENV)
 console.log(process.env.URL_PROD)
 
