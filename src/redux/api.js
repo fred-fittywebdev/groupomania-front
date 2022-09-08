@@ -2,8 +2,8 @@ import axios from 'axios'
 
 
 const API = axios.create({ baseURL: process.env.REACT_APP_ENV === "prod" ? process.env.REACT_APP_URL_PROD : process.env.REACT_APP_URL_DEV })
-console.log(process.env.ENV)
-console.log(process.env.URL_PROD)
+console.log(process.env.REACT_APP_ENV)
+console.log(process.env.REACT_APP_URL_PROD)
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem('profile')) {

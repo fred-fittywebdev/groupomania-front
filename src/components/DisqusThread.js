@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SHORTNAME = 'groupomania';
-const WEBSITE_URL = "http://localhost:3000";
+const WEBSITE_URL = process.env.REACT_APP_ENV === "prod" ? process.env.REACT_APP_URL_PROD : process.env.REACT_APP_URL_DEV;
 
 function renderDisqus() {
     if (window.DISQUS === undefined) {
